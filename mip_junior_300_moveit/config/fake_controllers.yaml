@@ -1,0 +1,16 @@
+controller_list:
+  - name: fake_mip_arm_controller
+    joints:
+      - Tower_Base_to_Shoulder
+      - Shoulder_to_Arm_Arm_Metal
+      - Arm_Arm_Metal_to_Forearm_Forearm_Metal
+      - Forearm_Forearm_Metal_to_End_Effector_MIP_Gripper_Interface
+  - name: fake_mip_gripper_controller
+    joints:
+      - End_Effector_MIP_Gripper_Interface_to_End_Effector_MIP_Tooth_Left
+      - End_Effector_MIP_Gripper_Interface_to_End_Effector_MIP_Tooth_Right
+initial:  # Define initial robot poses.
+  - group: mip_arm
+    pose: home
+  - group: mip_gripper
+    pose: close_gripper

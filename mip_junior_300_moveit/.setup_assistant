@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mip_junior_300
+    relative_path: urdf/mip_junior_300.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/mip_junior_300.srdf
+  CONFIG:
+    author_name: Luca Miller
+    author_email: luca@mip-robotics.com
+    generated_timestamp: 1600691984

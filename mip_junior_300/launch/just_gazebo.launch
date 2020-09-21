@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+06/2020
+Displays Junior in Gazebo
+-->
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <!-- start the simulation paused/unpaused -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <!-- user interface -->
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <!-- Xacro file describing junior -->
+  <arg name="model" default="$(find mip_junior_300)/urdf/mip_junior_300.urdf.xacro"/>
+
+  <!--Launching Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+	<!-- Parsing xacro and loading robot_description parameter -->
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+        args="-z 0.0 -unpause -urdf -model robot -param robot_description" respawn="false" output="screen" />
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
+
+</launch>
