@@ -5,13 +5,11 @@
 
 Create a new_folder which will be the new workspace
 
-Inside create a folder named src
-
 Go to the new_folder and right mouse click inside the file directory of the new_folder and click on "open new terminal"
 
 Inside this new terminal type
 ```
-git clone https://github.com/MIPRobotics/ROS_robotics_simulation folder -src
+git clone https://github.com/MIPRobotics/ROS_robotics_simulation src
 ```
 and
 ```
