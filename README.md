@@ -1,6 +1,6 @@
 # MIP-robotics : Making robotics accessible to all
 
-## The company
+## Our vision
 
 **MIP-robotics** whishes to help create a **world** where **industrial robotics is accessible to all**.
 
@@ -13,7 +13,7 @@ To that effect we have developped :
 For more advanced users we have built natively our cobot on ROS, this provides many advantages among others:
 - ROS is a popular ecosystem for robotics in the world from hobbist to academia and industry, all are familiar with it.
 - it allows simple integration of third party sensors and actuators with ROS drivers.
-- Robots can become PLC increasing ROI
+- Robots can even become a PLC increasing your ROI
 
 ##  Sample code
 
@@ -40,16 +40,15 @@ add contact URL
 ## What to expect
 
 Disclaimer :
-
-This repos is a sample code with limited functionalities, for the full list of our cobots functionnalities please contact us   
+This repos is a sample code with limited functionalities, for the full list of our cobots functionnalities please contact us.   
 
 This sample contains the simulation and motion performed by our cobot.
 
 ## Using this sample code
 
 This sample code will require several dependencies :
-- Multicore computer
-- recommended : graphics card
+- a multicore computer
+- it is recommended to have a dedicted graphics card
 - Linux Ubuntu 18.04
 - ROS Melodic
 - MoveIt! Melodic
@@ -172,9 +171,9 @@ The very first time you launch this you will have to go through these instructio
 
 If you haven't added the files into the src folder please do.
 
-### make workspace
+### Make workspace
 
-go to your workspace directory
+Go to your workspace directory
 ```
 cd ~/catkin_ws
 ```
@@ -196,7 +195,7 @@ source devel/setup.bash
 roslaunch mip_junior_300_moveit mip_junior_300_gazebo_objects_controlled.launch
 ```
 This launch file will:
-- launch our world in gazebo
+- launch a world in gazebo
 - spawn the robot
 - load the controllers defined in ros_controllers.yaml
 - run the controller spawner
