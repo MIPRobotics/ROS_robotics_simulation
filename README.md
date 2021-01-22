@@ -125,6 +125,7 @@ or follow these :
 
 Update ROS dependencies
 ```
+sudo rosdep init
 rosdep update
 sudo apt-get update
 sudo apt-get dist-upgrade
